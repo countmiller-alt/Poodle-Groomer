@@ -1,0 +1,15 @@
+# Secrets — never commit
+.env
+.env.*
+*.key
+.cal-api-key
+secrets/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Node (in case we add tooling later)
+node_modules/
+npm-debug.log*
