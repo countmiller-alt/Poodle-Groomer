@@ -293,6 +293,18 @@ section h2 { text-align: center; }
   font-style: italic;
 }
 
+.contact-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cta p {
+  margin-bottom: 1.25rem;
+}
+
 /* ---- Footer ---- */
 footer {
   text-align: center;
