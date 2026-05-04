@@ -358,12 +358,13 @@ section h2 { text-align: center; }
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 3rem 1.5rem;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+#cal-booking {
+  width: 100%;
+  min-height: 700px;
 }
 .booking-placeholder { font-style: italic; }
 
