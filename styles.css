@@ -354,19 +354,10 @@ section h2 { text-align: center; }
 
 /* ---- Booking ---- */
 .booking { text-align: center; }
-.booking-embed {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+.btn-lg {
+  padding: 1.1rem 2.5rem;
+  font-size: 1.1rem;
 }
-
-#cal-booking {
-  width: 100%;
-  min-height: 700px;
-}
-.booking-placeholder { font-style: italic; }
 
 /* ---- Contact ---- */
 .contact { background: var(--bg-tint); max-width: none; }

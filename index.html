@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Duke's Dog Grooming | Tulsa, OK</title>
   <meta name="description" content="Small-shop dog grooming in Tulsa. Joe and his poodle Duke take care of every pup like family — royal treatment, no royal pricing." />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dukesdoggrooming.com/" />
+  <meta property="og:title" content="Duke's Dog Grooming | Tulsa, OK" />
+  <meta property="og:description" content="Small-shop dog grooming in Tulsa. Royal treatment, no royal pricing. Book online — Mon, Tue, Thu, Fri." />
+  <meta property="og:image" content="https://dukesdoggrooming.com/images/joe-and-duke.png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Duke's Dog Grooming | Tulsa, OK" />
+  <meta name="twitter:description" content="Small-shop dog grooming in Tulsa. Royal treatment, no royal pricing." />
+  <meta name="twitter:image" content="https://dukesdoggrooming.com/images/joe-and-duke.png" />
+
+  <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -22,7 +40,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#book" class="nav-cta">Book Now</a></li>
+        <li><a href="#book" class="nav-cta" data-cal-link="dukes-dog-grooming/groom" data-cal-config='{"layout":"month_view"}'>Book Now</a></li>
       </ul>
     </nav>
   </header>
@@ -34,7 +52,7 @@
           <p class="eyebrow">Tulsa, OK</p>
           <h1>Royal treatment.<br />No royal pricing.</h1>
           <p class="tagline">Small-shop dog grooming where every pup gets one-on-one attention. Run by Joe and his poodle Duke &mdash; our (very biased) head mascot.</p>
-          <a href="#book" class="btn btn-primary">Book a Groom</a>
+          <a href="#book" class="btn btn-primary" data-cal-link="dukes-dog-grooming/groom" data-cal-config='{"layout":"month_view"}'>Book a Groom</a>
         </div>
         <div class="hero-image">
           <img src="images/joe-and-duke.png" alt="Illustrated mascot of Joe and his poodle Duke wearing a small crown — Duke's Dog Grooming, Tulsa OK" width="800" height="800" />
@@ -124,15 +142,7 @@
     <section id="book" class="booking">
       <h2>Book an Appointment</h2>
       <p class="section-lead">Pick a time that works. New clients fill out a quick questionnaire about their dog so Joe knows what to expect.</p>
-      <div class="booking-embed" aria-live="polite">
-        <div id="cal-booking"></div>
-        <script type="text/javascript">
-          (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)})(window,"https://app.cal.com/embed/embed.js","init");
-          Cal("init", {origin:"https://cal.com"});
-          Cal("inline", {elementOrSelector:"#cal-booking", calLink:"dukes-dog-grooming/groom", layout:"month_view"});
-          Cal("ui", {"styles":{"branding":{"brandColor":"#5B8A72"}},"hideEventTypeDetails":false,"layout":"month_view"});
-        </script>
-      </div>
+      <a href="#book" class="btn btn-primary btn-lg" data-cal-link="dukes-dog-grooming/groom" data-cal-config='{"layout":"month_view"}'>Choose a Time</a>
     </section>
 
     <section id="contact" class="contact">
@@ -151,7 +161,7 @@
       </div>
       <div class="contact-cta">
         <p>Booking, questions, and intake all happen online &mdash; no phone tag.</p>
-        <a href="#book" class="btn btn-primary">Book Online</a>
+        <a href="#book" class="btn btn-primary" data-cal-link="dukes-dog-grooming/groom" data-cal-config='{"layout":"month_view"}'>Book Online</a>
       </div>
     </section>
   </main>
@@ -161,5 +171,12 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- Cal.com popup embed -->
+  <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#5B8A72"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
 </body>
 </html>
