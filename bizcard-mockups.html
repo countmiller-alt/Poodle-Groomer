@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duke's — Business Card Mockups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:          #FAF7F2;
+      --bg-tint:     #F2EDE3;
+      --text:        #1F2937;
+      --text-soft:   #4B5563;
+      --accent:      #5B8A72;
+      --accent-dark: #436A57;
+      --card:        #FFFFFF;
+      --border:      #E5E0D7;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans:  'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: #E8E4DC;
+      color: var(--text);
+      padding: 3rem 2rem;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      text-align: center;
+      margin-bottom: 3rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mockup-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .mockup-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .mockup-label {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--text-soft);
+      font-style: italic;
+    }
+
+    .card-shadow {
+      filter: drop-shadow(0 8px 32px rgba(31,41,55,0.18));
+    }
+
+    /* ──────────────────────────────────────
+       Card dimensions: 3.5" × 2" @ 2× screen
+       = 672px × 384px
+    ────────────────────────────────────── */
+
+    /* ── CARD 1: Classic Cream ── */
+    .card-1 {
+      width: 672px;
+      height: 384px;
+      background: var(--bg);
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-1-left {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-1-top {}
+
+    .card-1-brand {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .card-1-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--accent-dark);
+      margin-top: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .card-1-name {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .card-1-title {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .card-1-bottom {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    .card-1-qr img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      border-radius: 6px;
+    }
+
+    .card-1-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 2px;
+    }
+
+    .card-1-contact a,
+    .card-1-contact span {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-1-contact .city {
+      font-size: 0.75rem;
+      color: var(--accent-dark);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .card-1-right {
+      background: var(--bg-tint);
+      border-left: 1px solid var(--border);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+
+    .card-1-right img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: -8px;
+    }
+
+    /* green accent bar on left edge */
+    .card-1::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: var(--accent);
+      border-radius: 16px 0 0 16px;
+    }
+
+    /* ── CARD 2: Bold Green ── */
+    .card-2 {
+      width: 672px;
+      height: 384px;
+      background: var(--accent-dark);
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      overflow: hidden;
+    }
+
+    .card-2-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      border-right: 1px solid rgba(250,247,242,0.12);
+    }
+
+    .card-2-left img {
+      width: 148px;
+      height: 148px;
+      object-fit: contain;
+      filter: brightness(1.05);
+    }
+
+    .card-2-right {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-2-top {}
+
+    .card-2-brand {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--bg);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .card-2-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: rgba(250,247,242,0.65);
+      margin-top: 6px;
+    }
+
+    .card-2-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--bg);
+      margin-top: 20px;
+      margin-bottom: 2px;
+    }
+
+    .card-2-title {
+      font-size: 0.72rem;
+      color: rgba(250,247,242,0.6);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card-2-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .card-2-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .card-2-contact span,
+    .card-2-contact a {
+      font-size: 0.8rem;
+      color: rgba(250,247,242,0.75);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-2-contact .city {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(250,247,242,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .card-2-qr {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 6px;
+    }
+
+    .card-2-qr img {
+      width: 72px;
+      height: 72px;
+      display: block;
+    }
+
+    /* ── CARD 3: Split Panel ── */
+    .card-3 {
+      width: 672px;
+      height: 384px;
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+    }
+
+    .card-3-left {
+      background: var(--accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-3-left::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 220px; height: 220px;
+      background: rgba(250,247,242,0.07);
+      border-radius: 50%;
+    }
+
+    .card-3-left::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: -50px;
+      width: 160px; height: 160px;
+      background: rgba(250,247,242,0.06);
+      border-radius: 50%;
+    }
+
+    .card-3-left img {
+      width: 200px;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-3-right {
+      background: var(--bg);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-3-brand {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+    }
+
+    .card-3-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--accent-dark);
+      margin-top: 5px;
+    }
+
+    .card-3-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-3-title {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 3px;
+    }
+
+    .card-3-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .card-3-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .card-3-contact span,
+    .card-3-contact a {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-3-contact .city {
+      font-size: 0.72rem;
+      color: var(--accent-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card-3-qr {
+      background: var(--bg-tint);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px;
+    }
+
+    .card-3-qr img {
+      width: 72px;
+      height: 72px;
+      display: block;
+    }
+
+    .qr-label {
+      font-size: 0.58rem;
+      text-align: center;
+      color: var(--text-soft);
+      margin-top: 4px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Duke's Dog Grooming — Business Card Mockups</h1>
+
+<div class="mockup-row">
+
+  <!-- OPTION 1 -->
+  <div class="mockup-block">
+    <div class="mockup-label">Option 1 — Classic Cream</div>
+    <div class="card-shadow">
+      <div class="card-1">
+        <div class="card-1-left">
+          <div class="card-1-top">
+            <div class="card-1-brand">Duke's Dog<br>Grooming</div>
+            <div class="card-1-tagline">Royal treatment. No royal pricing.</div>
+          </div>
+          <div>
+            <div class="card-1-name">Joe Wise</div>
+            <div class="card-1-title">Owner &amp; Groomer</div>
+          </div>
+          <div class="card-1-bottom">
+            <div class="card-1-qr">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://dukesdoggrooming.com&color=436A57&bgcolor=FAF7F2&margin=4" alt="QR code" />
+              <div class="qr-label">Book online</div>
+            </div>
+            <div class="card-1-contact">
+              <span class="city">Tulsa, OK</span>
+              <a href="#">dukesdoggrooming.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-1-right">
+          <img src="https://dukesdoggrooming.com/images/joe-and-duke.png" alt="Joe and Duke" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION 2 -->
+  <div class="mockup-block">
+    <div class="mockup-label">Option 2 — Bold Green</div>
+    <div class="card-shadow">
+      <div class="card-2">
+        <div class="card-2-left">
+          <img src="https://dukesdoggrooming.com/images/joe-and-duke.png" alt="Joe and Duke" />
+        </div>
+        <div class="card-2-right">
+          <div class="card-2-top">
+            <div class="card-2-brand">Duke's Dog<br>Grooming</div>
+            <div class="card-2-tagline">Royal treatment. No royal pricing.</div>
+            <div class="card-2-name">Joe Wise</div>
+            <div class="card-2-title">Owner &amp; Groomer</div>
+          </div>
+          <div class="card-2-bottom">
+            <div class="card-2-contact">
+              <span class="city">Tulsa, OK</span>
+              <a href="#">dukesdoggrooming.com</a>
+            </div>
+            <div class="card-2-qr">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=144x144&data=https://dukesdoggrooming.com&color=436A57&bgcolor=FAF7F2&margin=4" alt="QR code" />
+              <div class="qr-label" style="color:rgba(250,247,242,0.45)">Book online</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION 3 -->
+  <div class="mockup-block">
+    <div class="mockup-label">Option 3 — Split Panel</div>
+    <div class="card-shadow">
+      <div class="card-3">
+        <div class="card-3-left">
+          <img src="https://dukesdoggrooming.com/images/joe-and-duke.png" alt="Joe and Duke" />
+        </div>
+        <div class="card-3-right">
+          <div>
+            <div class="card-3-brand">Duke's Dog<br>Grooming</div>
+            <div class="card-3-tagline">Royal treatment. No royal pricing.</div>
+          </div>
+          <div>
+            <div class="card-3-name">Joe Wise</div>
+            <div class="card-3-title">Owner &amp; Groomer</div>
+          </div>
+          <div class="card-3-bottom">
+            <div class="card-3-contact">
+              <span class="city">Tulsa, OK</span>
+              <a href="#">dukesdoggrooming.com</a>
+            </div>
+            <div>
+              <div class="card-3-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=144x144&data=https://dukesdoggrooming.com&color=436A57&bgcolor=FAF7F2&margin=4" alt="QR code" />
+              </div>
+              <div class="qr-label">Book online</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
