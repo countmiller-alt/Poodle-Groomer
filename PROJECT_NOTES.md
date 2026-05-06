@@ -17,10 +17,10 @@ Live at: **https://dukesdoggrooming.com**
 | Mascot illustration | ✅ Joe + Duke cartoon badge in hero |
 | Pricing & services copy | ✅ |
 | About section | ✅ |
-| Booking embed | ⏳ Cal.com config pending → embed code goes in `#book` section |
-| Gallery | ⏳ Placeholder text — waiting on real before/after photos from Joe |
+| Booking embed | ✅ Cal.com popup embed wired to `dukes-dog-grooming/groom` |
+| Gallery | ✅ Real gallery photos added |
 | Cal.com account | ✅ Created for Joe; API key generated |
-| Cal.com event/availability/intake config | ⏳ To be done from laptop session |
+| Cal.com event/availability/intake config | ⚠️ Event is public; exact confirmation email content still needs verification by test booking or Cal.com account access |
 
 ---
 
@@ -29,7 +29,7 @@ Live at: **https://dukesdoggrooming.com**
 - **Hosting:** GitHub Pages, free tier, serves from `main` branch root
 - **Domain:** `dukesdoggrooming.com` (Cloudflare registrar, ~$10/year)
 - **DNS:** Cloudflare, "DNS only" (gray cloud) records — 4 A records to GitHub Pages IPs + CNAME for `www`
-- **Booking:** Cal.com (free tier), embed pending
+- **Booking:** Cal.com (free tier), popup embed via `data-cal-link="dukes-dog-grooming/groom"`
 - **Build step:** none — pure static HTML/CSS/JS
 - **Total annual cost:** ~$10 (just the domain)
 
@@ -117,9 +117,9 @@ Joe's Cal.com account is created. The API key is stored **outside** the repo in 
 7. Anything else Joe should know? (long text, optional)
 8. Photo of your pup (file upload, optional — skip if not on free tier)
 
-**Confirmation email** should include Joe's actual home address and parking instructions. Address is stored externally; do not put it in the repo.
+**Confirmation email** should include Joe's actual home address and parking instructions. Address is stored externally; do not put it in the repo. As of 2026-05-06, the site link and Cal.com public event are confirmed, but the exact attendee confirmation email has not been verified because no test booking has been submitted and no Cal.com API key is present on this laptop.
 
-**After Cal.com is configured**, grab the **inline embed snippet** for the event and paste it into `index.html` inside the `<div class="booking-embed">` (replacing the placeholder `<p>`). Push to `main`.
+The current site uses Cal.com's popup embed instead of the older inline calendar. Booking CTAs carry `data-cal-link="dukes-dog-grooming/groom"` and the Cal.com script is loaded near the bottom of `index.html`.
 
 ---
 
@@ -127,9 +127,9 @@ Joe's Cal.com account is created. The API key is stored **outside** the repo in 
 
 1. Verify `https://dukesdoggrooming.com` loads with valid cert
 2. Enable **Enforce HTTPS** in repo Settings → Pages
-3. Complete Cal.com configuration (see above)
-4. Embed Cal.com widget in `#book` section
-5. Add real before/after photos to gallery when Joe sends them
+3. Verify Cal.com attendee confirmation email by making a test booking or logging into Joe's Cal.com account
+4. Confirm the attendee email includes Joe's address and parking instructions
+5. Confirm the Cal.com event availability/intake questions still match the intended setup
 6. (Optional) Set up free Cloudflare email forwarding so `joe@dukesdoggrooming.com` → Joe's actual email
 7. (Optional) Further compress mascot image (currently ~750KB)
 8. (Optional) Add `og:image` and other social-sharing meta tags
@@ -172,7 +172,7 @@ The development sandbox firewalls outbound HTTP traffic to most hosts:
 ## Branch strategy
 
 - **`main`** — production. What GitHub Pages serves. Push here for deploys. Single linear history.
-- **`claude/init-project-WR4RT`** — original dev branch with full commit history. Mostly retired now; safe to ignore or delete.
+- **`claude/init-project-WR4RT`** — original dev branch with full commit history. Mostly retired now; safe to ignore or delete. GitHub may still clone this branch by default, so switch to `main` before reviewing or editing the live site.
 
 ---
 
