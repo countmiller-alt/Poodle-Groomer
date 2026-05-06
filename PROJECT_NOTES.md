@@ -17,10 +17,10 @@ Live at: **https://dukesdoggrooming.com**
 | Mascot illustration | ✅ Joe + Duke cartoon badge in hero |
 | Pricing & services copy | ✅ |
 | About section | ✅ |
-| Booking embed | ✅ Cal.com popup embed wired to `dukes-dog-grooming/groom` |
+| Booking embed | ✅ Cal.com popup embed wired to API-controlled event `jrwise100-jg1uaa/groom` |
 | Gallery | ✅ Real gallery photos added |
 | Cal.com account | ✅ Created for Joe; API key generated |
-| Cal.com event/availability/intake config | ⚠️ Event is public; exact confirmation email content still needs verification by test booking or Cal.com account access |
+| Cal.com event/availability/intake config | ✅ API-controlled event inspected; exact confirmation email content still needs verification by test booking |
 
 ---
 
@@ -29,7 +29,7 @@ Live at: **https://dukesdoggrooming.com**
 - **Hosting:** GitHub Pages, free tier, serves from `main` branch root
 - **Domain:** `dukesdoggrooming.com` (Cloudflare registrar, ~$10/year)
 - **DNS:** Cloudflare, "DNS only" (gray cloud) records — 4 A records to GitHub Pages IPs + CNAME for `www`
-- **Booking:** Cal.com (free tier), popup embed via `data-cal-link="dukes-dog-grooming/groom"`
+- **Booking:** Cal.com (free tier), popup embed via `data-cal-link="jrwise100-jg1uaa/groom"`
 - **Build step:** none — pure static HTML/CSS/JS
 - **Total annual cost:** ~$10 (just the domain)
 
@@ -97,13 +97,13 @@ Joe's Cal.com account is created. The API key is stored **outside** the repo in 
 
 | Setting | Value |
 |---|---|
-| Username | `dukes-dog-grooming` (URL becomes `cal.com/dukes-dog-grooming`) |
+| Username | `jrwise100-jg1uaa` (URL is `cal.com/jrwise100-jg1uaa/groom`; older notes expected `dukes-dog-grooming`, but the provided live API key controls `jrwise100-jg1uaa`) |
 | Timezone | `America/Chicago` (Central) |
 | Availability | Mon, Tue, Thu, Fri — 9:00 AM to 1:00 PM |
 | Event type title | `Dog Grooming Appointment` |
 | Event slug | `groom` |
-| Event duration | 120 minutes (yields exactly 9 AM and 11 AM bookable slots) |
-| Description | "Full groom for your pup — bath, cut and style, sanitary trim, paw pads. Small dogs $50, large dogs $80. Add a nail trim for $10." |
+| Event duration | 90 minutes (yields 9:00 AM and 10:30 AM bookable slots) |
+| Description | "Full groom for your pup - bath, cut and style, sanitary trim, and paw-pad trim. Small dogs $50, large dogs $80. Add a nail trim for $10." |
 | Location | "Joe's home studio (address shared after booking)" |
 
 **Intake questions to add:**
@@ -117,9 +117,9 @@ Joe's Cal.com account is created. The API key is stored **outside** the repo in 
 7. Anything else Joe should know? (long text, optional)
 8. Photo of your pup (file upload, optional — skip if not on free tier)
 
-**Confirmation email** should include Joe's actual home address and parking instructions. Address is stored externally; do not put it in the repo. As of 2026-05-06, the site link and Cal.com public event are confirmed, but the exact attendee confirmation email has not been verified because no test booking has been submitted and no Cal.com API key is present on this laptop.
+**Confirmation email** should include Joe's actual home address and parking instructions. Address is stored externally; do not put it in the repo. As of 2026-05-06, the API-controlled Cal.com event has an address location with `public: false`; Cal.com documents that hidden locations are shown after booking confirmation. The exact attendee email body still needs verification by a test booking.
 
-The current site uses Cal.com's popup embed instead of the older inline calendar. Booking CTAs carry `data-cal-link="dukes-dog-grooming/groom"` and the Cal.com script is loaded near the bottom of `index.html`.
+The current site uses Cal.com's popup embed instead of the older inline calendar. Booking CTAs carry `data-cal-link="jrwise100-jg1uaa/groom"` and the Cal.com script is loaded near the bottom of `index.html`.
 
 ---
 
